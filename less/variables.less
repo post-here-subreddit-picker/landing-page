@@ -1,0 +1,51 @@
+//Fonts 
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@mainfont: ‘Poppins’, sans-serif;
+
+//Colors
+@p-color:black;
+@s-color:white;
+@t-color:#FF4301;
+@button-color-hover: red;
+@button-color:@t-color;
+
+//Mixins
+
+.flex(@justify,@align){
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.link(@color:@s-fontcolor){
+    text-decoration: none;
+    color: @color;
+}
+
+.button(@bgcolor:@button-color, @color:white){
+    background-color: @bgcolor;
+    color: @color;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        background-color: @button-color-hover;
+    }
+}
+
+.title(@color){
+    color: @color;
+    text-transform: uppercase;
+}
+
+.subTitle(@color){
+    color: @color;
+    width: 80%;
+    text-align: center;
+}
+
+@tablet: ~"(max-width: 900px)";
+@phone: ~"(max-width: 650px)";

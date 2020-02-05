@@ -1,0 +1,167 @@
+// General Styles
+* {
+box-sizing: border-box;
+}
+
+html {
+font-size: 62.5%;
+}
+
+html, body {
+    font-family: @mainfont;
+}
+
+h1, h2, h3, h4, h5 {
+
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    @media @phone{
+        width: 95%;
+    }
+}
+
+nav{
+    background: #262626;
+    width: 100%;
+}
+
+.navCont{
+    .flex(center,center);
+    img{
+    height: 8rem;
+    }
+}
+
+.navbar{
+    width: 25%;
+    height: 100%;
+    background-color: #262626e1;
+    position: fixed;
+    top: 0;
+    right: -45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s cubic-bezier(1, 0, 0, 1);
+    z-index: 99;
+	@media @tablet {
+		width: 45%;
+		border-radius: 0;
+	}
+	
+	@media @phone {
+		width: 100%;
+		right: -100%;
+	} 
+	//Main navbar media queries
+
+	// main navbar styling
+	.hambg-menu {
+		width: 30px;
+		height: 30px;
+		position: fixed;
+		top: 25px;
+		right: 25px;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		z-index: 99;
+
+		&:hover .line{
+			background-color: @s-color;
+		}
+	
+		.line {
+			width: 100%;
+			height: .3rem;
+			background-color: @t-color;
+			transition: all 0.8s;
+		}
+		//Every hamburger icon element styling
+
+	} //Hamburger icon styling
+	
+	.nav-list {
+		text-align: end;
+		height: 60%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		//Nav list styling
+
+		.nav-items {
+			list-style: none;
+			margin: 15% 0;
+		
+			//Every LIST element styling
+			.nav-element {
+				text-decoration: none;
+				font-size: 2rem;
+				color: @s-color;
+				font-weight: 300%;
+				letter-spacing: 0.1rem;
+				text-transform: uppercase;
+				position: relative;
+				padding: 3px 0;
+                button{
+                    .button(@t-color, @s-color);
+                }
+
+                &.link{
+                    &:hover{
+                        color: @t-color;
+                    }
+                    // Lines on hover styling
+                    &::after,
+                    &::before {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background: @t-color;
+                        position: absolute;
+                        left: 0;
+                        transform: scaleX(0);
+                        transition: transform 0.5s;
+                    }
+                    
+                    &::after {
+                        bottom: 0;
+                        transform-origin: right;
+                    }
+                    
+                    &::before {
+                        top: 0;
+                        transform-origin: left;
+                    }
+    
+                    &:hover::before,
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+                }
+
+
+			}
+		}
+	}
+}
+
+.change{
+	right: 0;
+	.line1 {
+		transform: rotateZ(-45deg) translate(-8px, 6px);
+	}
+	.line2 {
+		opacity: 0;
+	}
+	.line3 {
+		transform: rotateZ(45deg)translate(-8px, -6px);
+	}
+}
+
+
+

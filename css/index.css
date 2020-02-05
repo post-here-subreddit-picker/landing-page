@@ -1,0 +1,652 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: ‘Poppins’, sans-serif;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 650px) {
+  .container {
+    width: 95%;
+  }
+}
+nav {
+  background: #262626;
+  width: 100%;
+}
+.navCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navCont img {
+  height: 8rem;
+}
+.navbar {
+  width: 25%;
+  height: 100%;
+  background-color: #262626e1;
+  position: fixed;
+  top: 0;
+  right: -45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.5s cubic-bezier(1, 0, 0, 1);
+  z-index: 99;
+}
+@media (max-width: 900px) {
+  .navbar {
+    width: 45%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 650px) {
+  .navbar {
+    width: 100%;
+    right: -100%;
+  }
+}
+.navbar .hambg-menu {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 99;
+}
+.navbar .hambg-menu:hover .line {
+  background-color: white;
+}
+.navbar .hambg-menu .line {
+  width: 100%;
+  height: 0.3rem;
+  background-color: #FF4301;
+  transition: all 0.8s;
+}
+.navbar .nav-list {
+  text-align: end;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.navbar .nav-list .nav-items {
+  list-style: none;
+  margin: 15% 0;
+}
+.navbar .nav-list .nav-items .nav-element {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  font-weight: 300%;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+.navbar .nav-list .nav-items .nav-element button {
+  background-color: #FF4301;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .nav-list .nav-items .nav-element button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.navbar .nav-list .nav-items .nav-element.link:hover {
+  color: #FF4301;
+}
+.navbar .nav-list .nav-items .nav-element.link::after,
+.navbar .nav-list .nav-items .nav-element.link::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #FF4301;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+.navbar .nav-list .nav-items .nav-element.link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+.navbar .nav-list .nav-items .nav-element.link::before {
+  top: 0;
+  transform-origin: left;
+}
+.navbar .nav-list .nav-items .nav-element.link:hover::before,
+.navbar .nav-list .nav-items .nav-element.link:hover::after {
+  transform: scaleX(1);
+}
+.change {
+  right: 0;
+}
+.change .line1 {
+  transform: rotateZ(-45deg) translate(-8px, 6px);
+}
+.change .line2 {
+  opacity: 0;
+}
+.change .line3 {
+  transform: rotateZ(45deg) translate(-8px, -6px);
+}
+.hero-homebg {
+  position: absolute;
+  background: url("../img/reddit-heropg.jpg");
+  background-size: cover;
+  background-position: center;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+}
+.homeCont {
+  position: relative;
+}
+.homeCont .hero .herotxt {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.homeCont .hero .herotxt h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 6rem;
+  letter-spacing: 2rem;
+  color: white;
+  font-weight: 900;
+}
+@media (max-width: 900px) {
+  .homeCont .hero .herotxt h1 {
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  .homeCont .hero .herotxt h1 {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+}
+.homeCont .hero .herotxt p {
+  color: white;
+  font-size: 3rem;
+  width: 50%;
+  text-align: center;
+  line-height: 4rem;
+}
+.homeCont .hero .herotxt .btn_login button {
+  background-color: #FF4301;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 3rem;
+  padding: 1rem 5rem;
+}
+.homeCont .hero .herotxt .btn_login button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.homeCont .subhero {
+  padding: 3% 0;
+  width: 80%;
+  margin: 0 auto 6% auto;
+  background: #262626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .homeCont .subhero {
+    width: 100%;
+  }
+}
+.homeCont .subhero h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 6%;
+}
+.homeCont .subhero .features {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.homeCont .subhero .features .box {
+  width: 45%;
+  padding: 2%;
+  margin-bottom: 10%;
+}
+@media (max-width: 750px) {
+  .homeCont .subhero .features .box {
+    width: 100%;
+  }
+}
+.homeCont .subhero .features .box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 3rem;
+  padding-bottom: 5%;
+  font-weight: 500;
+  border-bottom: 1px solid #1a1a1a;
+}
+.homeCont .subhero .features .box p {
+  color: #d6d6d6;
+  width: 80%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+.homeCont .about {
+  width: 80%;
+  margin: 0 auto 6%;
+}
+@media (max-width: 900px) {
+  .homeCont .about {
+    width: 100%;
+  }
+}
+.homeCont .about div {
+  height: 50vh;
+  background: url("../img/team.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+}
+.homeCont .about div h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 5rem;
+  letter-spacing: 0.8rem;
+  font-weight: 700;
+}
+@media (max-width: 650px) {
+  .homeCont .about div h1 {
+    letter-spacing: 0;
+  }
+}
+.homeCont .about div p {
+  color: white;
+  width: 80%;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+@media (max-width: 650px) {
+  .homeCont .about div p {
+    letter-spacing: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+.homeCont .about div .btn_about button {
+  background-color: #FF4301;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 3rem;
+  padding: 1rem 5rem;
+}
+.homeCont .about div .btn_about button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.hero-aboutbg {
+  position: absolute;
+  background: url("../img/team2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  left: 0;
+  width: 100%;
+  height: 65vh;
+}
+.aboutCont {
+  position: relative;
+}
+.aboutCont .hero {
+  margin-bottom: 12%;
+}
+.aboutCont .hero .herotxt {
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.aboutCont .hero .herotxt h1 {
+  text-transform: uppercase;
+  font-size: 6rem;
+  letter-spacing: 2rem;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .aboutCont .hero .herotxt h1 {
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  .aboutCont .hero .herotxt h1 {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+}
+.aboutCont .hero .herotxt p {
+  color: white;
+  font-size: 3rem;
+  width: 50%;
+  text-align: center;
+  line-height: 4rem;
+}
+@media (max-width: 650px) {
+  .aboutCont .hero .herotxt p {
+    font-size: 2.5rem;
+    width: 80%;
+  }
+}
+.aboutCont .hero .herotxt .btn_login button {
+  background-color: #FF4301;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 3rem;
+  padding: 1rem 5rem;
+}
+.aboutCont .hero .herotxt .btn_login button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.aboutCont .team {
+  margin-top: 3%;
+}
+.aboutCont .team h1 {
+  color: black;
+  text-transform: uppercase;
+  font-size: 5rem;
+  text-align: center;
+}
+.aboutCont .team .teamMembers {
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.aboutCont .team .teamMembers .member {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 310px 250px 60px;
+  grid-template-areas: "image" "text" "stats";
+  border-radius: 18px;
+  background: #faf8f8;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  font-family: roboto;
+  text-align: center;
+  transition: 0.5s ease;
+  margin: 40px;
+  transition: all 0.5s ease-in-out;
+}
+.aboutCont .team .teamMembers .member:hover {
+  transform: scale(1.2);
+}
+.aboutCont .team .teamMembers .member .member-image {
+  grid-area: image;
+  background: url("../img/placeholderuser.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.aaron {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/aaron.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.alicia {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/alicia.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.michael {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/michaelfamurewa.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.bairon {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/baironpaz.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.nicole {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/nicoleadams.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.coltyn {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/coltyn.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.daniel {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/danielaguilar.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-image.eric {
+  width: 100%;
+  height: 100%;
+  background: url("../img/members/ericramon.jpeg");
+  background-size: cover;
+}
+.aboutCont .team .teamMembers .member .member-text {
+  grid-area: text;
+  margin: 25px;
+}
+.aboutCont .team .teamMembers .member .member-text h1 {
+  font-size: 3rem;
+  margin-bottom: 6%;
+  font-weight: 700;
+}
+.aboutCont .team .teamMembers .member .member-text p {
+  font-size: 2rem;
+  font-weight: 300;
+  height: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.aboutCont .team .teamMembers .member .member-text p:hover {
+  overflow: auto;
+}
+.aboutCont .team .teamMembers .member .member-social {
+  grid-area: stats;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #cacaca;
+}
+.aboutCont .team .teamMembers .member .member-social img {
+  height: 50px;
+}
